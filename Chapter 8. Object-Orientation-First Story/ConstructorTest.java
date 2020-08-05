@@ -1,26 +1,22 @@
-public class  ConstructorTest{
-	public static void main(String[] args) {
-		DateTest  today = new DateTest();
-		DateTest  yesterday = new DateTest(2002,9,4);
-		today.display();
-		yesterday.display();
+/*
+	남궁성, Java의 정석, 3rd Edition(도우출판, 2016), p.292-293.
+*/
+
+class Data1 {
+	int value;
+}
+
+class Data2 {
+	int value;
+
+	Data2(int x) { 	// 매개변수가 있는 생성자.
+		value = x;
 	}
 }
-class DateTest{
-	int year;
-	int month;
-	int day;
-	public DateTest(){
-		year = 2002;
-		month = 9;
-		day = 5;
+
+public class ConstructorTest {
+	public static void main(String[] args) {
+		Data1 d1 = new Data1();
+		Data2 d2 = new Data2();		// compile error발생
 	}
-	public DateTest(int year, int month, int day){
-		this.year = year;
-		this.month = month;
-		this.day = day;
-	}
-	void display(){
-		System.out.println("year = " + year + ", month= " + month + ", day=" + day);
-	}
-};
+}
